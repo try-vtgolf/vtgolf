@@ -1,0 +1,799 @@
+/* ===================================
+   CSS Variables & Bootstrap Overrides
+   =================================== */
+:root {
+    --navbar-height: 75px;
+    /* ==========================================
+       COLOR SYSTEM - grouped by hex value
+       Update hex + RGB together for each color
+       ========================================== */
+
+    /* GOLD ACCENT - Primary CTAs, links */
+    --bs-primary: #a68845;
+    --bs-primary-rgb: 166, 136, 69;
+    --bs-link-hover-color: #a68845;
+
+    /* GOLD HOVER & ACTIVE */
+    --primary-hover: #947a3d;
+    --primary-active: #826b35;
+
+    /* WARM GRAY - Secondary buttons */
+    --bs-secondary: #8f9094;
+    --bs-secondary-rgb: 143, 144, 148;
+    --bs-border-color: rgba(var(--bs-secondary-rgb), 0.2);
+
+    /* GRAY HOVER & ACTIVE */
+    --secondary-hover: #72737a;
+    --secondary-active: #5a5b60;
+
+    /* SAGE GREEN - Success states, checkmarks */
+    --bs-success: #7a9181;
+    --bs-success-rgb: 122, 145, 129;
+
+    /* GREEN HOVER & ACTIVE & LIGHT */
+    --success-hover: #627467;
+    --success-active: #4d5a52;
+    --success-light: #c3cdc6;
+
+    /* LOGO RED - Alerts, errors */
+    --bs-danger: #800000;
+    --bs-danger-rgb: 128, 0, 0;
+
+    /* RED HOVER & ACTIVE */
+    --danger-hover: #660000;
+    --danger-active: #4d0000;
+
+    /* DEEP GREEN - Brand dark, headers, dark backgrounds */
+    --bs-dark: #223329;
+    --bs-dark-rgb: 34, 51, 41;
+
+    /* DARK GREEN HOVER & ACTIVE */
+    --dark-hover: #1a2620;
+    --dark-active: #121a17;
+
+    /* SAND - Light backgrounds */
+    --bs-light: #e9e2d8;
+    --bs-light-rgb: 233, 226, 216;
+    --bs-body-bg: #e9e2d8;
+
+    /* WHITE - backgrounds, text etc. */
+    --bs-white: #f7f5f2;
+    --bs-link-color: #f7f5f2;
+    --bs-white-rbg: 247, 245, 242;
+
+    /* TEXT DARK - Body text */
+    --bs-body-color: #1e2221;
+
+    /* TEXT MUTED - Secondary text*/
+    --text-muted: #5c6361;
+
+    /* AMBER/OCHRE - Warning states, caution messages */
+    --bs-warning: #d4a574;
+    --bs-warning-rgb: 212, 165, 116;
+
+    /* WARNING HOVER & ACTIVE */
+    --warning-hover: #c8935d;
+    --warning-active: #b8804a;
+
+    /* MUTED TEAL - Info states, neutral messages */
+    --bs-info: #6b8e9a;
+    --bs-info-rgb: 107, 142, 154;
+
+    /* INFO HOVER & ACTIVE */
+    --info-hover: #56717b;
+    --info-active: #445a62;
+}
+
+/* ===================================
+   Global Styles
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: var(--navbar-height);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.alt-font {
+    font-family: 'Fraunces', serif;
+}
+
+.navbar-offset {
+    padding-top: var(--navbar-height);
+}
+
+.navbar-offset-y {
+    padding-top: var(--navbar-height);
+    padding-bottom: var(--navbar-height);
+}
+
+.opacity-95 {
+    opacity: 0.95;
+}
+
+.bg-success-transparent {
+    background-color: rgba(var(--bs-success-rgb), 0.3);
+}
+
+.bg-dark-transparent {
+    background-color: rgba(var(--bs-dark-rgb), 0.3);
+}
+
+.bg-light-transparent {
+    background-color: rgba(var(--bs-light-rgb), 0.3);
+}
+
+.bg-white-transparent {
+    background-color: rgba(var(--bs-white-rgb), 0.3);
+}
+
+.bg-dark .text-success {
+    color: var(--success-light) !important;
+}
+
+/* ===================================
+   Logo height (responsive)
+   =================================== */
+
+/* Logo sizing */
+.logo-height {
+    height: 32px;
+}
+
+@media (min-width: 992px) {
+    .logo-height {
+        height: 48px;
+    }
+}
+
+.display-3 .logo-height,
+.display-5 .logo-height {
+    height: 4.5rem;
+    padding-bottom: 1rem;
+}
+
+/* Ball sizing */
+.ball-height {
+    height: 20px;
+}
+
+@media (min-width: 992px) {
+    .ball-height {
+        height: 32px;
+    }
+}
+
+/* Logo animation */
+.rolling-ball {
+    bottom: 12px;
+    animation: rollIn 1.3s ease-out forwards, fadeOutBall 0.3s 1.2s forwards;
+    opacity: 1;
+}
+
+.full-logo {
+    opacity: 0;
+    animation: fadeInLogo 0.4s 1.1s forwards;
+}
+
+/* Roll in from left with rotation 
+   Math for rotation: 
+   - Ball diameter: 32px or 20px
+   - Circumference: π × 32=~100.5px or π × 20 = ~62.8px
+   - Travel distance: 400px or 200px (300 + 100 or 134 + 66) 
+   - Rotations needed: 
+        400px ÷ 100.5px=3.98 rotations
+        200px ÷ 62.8px=3.18 rotations
+   - Degrees: 3.98 × 360°=954°
+   */
+@keyframes rollIn {
+    from {
+        transform: translateX(-134px) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(66px) rotate(1146deg);
+    }
+}
+
+@media (min-width: 992px) {
+    @keyframes rollIn {
+        from {
+            transform: translateX(-300px) rotate(0deg);
+        }
+
+        to {
+            transform: translateX(100px) rotate(1433deg);
+        }
+    }
+}
+
+/* Fade out the ball */
+@keyframes fadeOutBall {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Fade in the full logo */
+@keyframes fadeInLogo {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .rolling-ball {
+        display: none;
+    }
+
+    .full-logo {
+        opacity: 1;
+        animation: none;
+    }
+}
+
+/* ===================================
+   Button colors
+   =================================== */
+
+.btn-primary {
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-bg: var(--primary-hover);
+    --bs-btn-hover-border-color: var(--primary-hover);
+    --bs-btn-active-bg: var(--primary-active);
+    --bs-btn-active-border-color: var(--primary-active);
+    --bs-btn-disabled-bg: var(--bs-primary);
+    --bs-btn-disabled-border-color: var(--bs-primary);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-primary);
+    --bs-btn-hover-border-color: var(--bs-primary);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-primary);
+    --bs-btn-active-border-color: var(--bs-primary);
+}
+
+.btn-danger {
+    --bs-btn-bg: var(--bs-danger);
+    --bs-btn-border-color: var(--bs-danger);
+    --bs-btn-hover-bg: var(--danger-hover);
+    --bs-btn-hover-border-color: var(--danger-hover);
+    --bs-btn-active-bg: var(--danger-active);
+    --bs-btn-active-border-color: var(--danger-active);
+    --bs-btn-disabled-bg: var(--bs-danger);
+    --bs-btn-disabled-border-color: var(--bs-danger);
+}
+
+.btn-outline-danger {
+    --bs-btn-color: var(--bs-danger);
+    --bs-btn-border-color: var(--bs-danger);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-danger);
+    --bs-btn-hover-border-color: var(--bs-danger);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-danger);
+    --bs-btn-active-border-color: var(--bs-danger);
+}
+
+.btn-secondary {
+    --bs-btn-bg: var(--bs-secondary);
+    --bs-btn-border-color: var(--bs-secondary);
+    --bs-btn-hover-bg: var(--secondary-hover);
+    --bs-btn-hover-border-color: var(--secondary-hover);
+    --bs-btn-active-bg: var(--secondary-active);
+    --bs-btn-active-border-color: var(--secondary-active);
+    --bs-btn-disabled-bg: var(--bs-secondary);
+    --bs-btn-disabled-border-color: var(--bs-secondary);
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--bs-secondary);
+    --bs-btn-border-color: var(--bs-secondary);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-secondary);
+    --bs-btn-hover-border-color: var(--bs-secondary);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-secondary);
+    --bs-btn-active-border-color: var(--bs-secondary);
+}
+
+.btn-dark {
+    --bs-btn-bg: var(--bs-dark);
+    --bs-btn-border-color: var(--bs-dark);
+    --bs-btn-hover-bg: var(--dark-hover);
+    --bs-btn-hover-border-color: var(--dark-hover);
+    --bs-btn-active-bg: var(--dark-active);
+    --bs-btn-active-border-color: var(--dark-active);
+    --bs-btn-disabled-bg: var(--bs-dark);
+    --bs-btn-disabled-border-color: var(--bs-dark);
+}
+
+.btn-outline-dark {
+    --bs-btn-color: var(--bs-dark);
+    --bs-btn-border-color: var(--bs-dark);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-dark);
+    --bs-btn-hover-border-color: var(--bs-dark);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-dark);
+    --bs-btn-active-border-color: var(--bs-dark);
+}
+
+.btn-success {
+    --bs-btn-bg: var(--bs-success);
+    --bs-btn-border-color: var(--bs-success);
+    --bs-btn-hover-bg: var(--success-hover);
+    --bs-btn-hover-border-color: var(--success-hover);
+    --bs-btn-active-bg: var(--success-active);
+    --bs-btn-active-border-color: var(--success-active);
+    --bs-btn-disabled-bg: var(--bs-success);
+    --bs-btn-disabled-border-color: var(--bs-success);
+}
+
+.btn-outline-success {
+    --bs-btn-color: var(--bs-success);
+    --bs-btn-border-color: var(--bs-success);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-success);
+    --bs-btn-hover-border-color: var(--bs-success);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-success);
+    --bs-btn-active-border-color: var(--bs-success);
+}
+
+.btn-warning {
+    --bs-btn-bg: var(--bs-warning);
+    --bs-btn-border-color: var(--bs-warning);
+    --bs-btn-hover-bg: var(--warning-hover);
+    --bs-btn-hover-border-color: var(--warning-hover);
+    --bs-btn-active-bg: var(--warning-active);
+    --bs-btn-active-border-color: var(--warning-active);
+    --bs-btn-disabled-bg: var(--bs-warning);
+    --bs-btn-disabled-border-color: var(--bs-warning);
+}
+
+.btn-outline-warning {
+    --bs-btn-color: var(--bs-warning);
+    --bs-btn-border-color: var(--bs-warning);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-warning);
+    --bs-btn-hover-border-color: var(--bs-warning);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-warning);
+    --bs-btn-active-border-color: var(--bs-warning);
+}
+
+.btn-info {
+    --bs-btn-bg: var(--bs-info);
+    --bs-btn-border-color: var(--bs-info);
+    --bs-btn-hover-bg: var(--info-hover);
+    --bs-btn-hover-border-color: var(--info-hover);
+    --bs-btn-active-bg: var(--info-active);
+    --bs-btn-active-border-color: var(--info-active);
+    --bs-btn-disabled-bg: var(--bs-info);
+    --bs-btn-disabled-border-color: var(--bs-info);
+}
+
+.btn-outline-info {
+    --bs-btn-color: var(--bs-info);
+    --bs-btn-border-color: var(--bs-info);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-info);
+    --bs-btn-hover-border-color: var(--bs-info);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-info);
+    --bs-btn-active-border-color: var(--bs-info);
+}
+
+.dropdown-menu-dark {
+    --bs-dropdown-bg: var(--bs-dark);
+}
+
+/* ===================================
+   Link and button hover effects
+   =================================== */
+.navbar .nav-link:not(.btn):hover,
+.bg-dark a:not(.btn):hover {
+    color: var(--bs-primary) !important;
+}
+
+.btn:not(.btn-link):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(var(--bs-dark-rgb), 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn:not(.btn-link):active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(var(--bs-dark-rgb), 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-primary.btn-pulse {
+    box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.3);
+    animation: pulse-primary 2s ease-in-out infinite;
+}
+
+.btn-danger.btn-pulse {
+    box-shadow: 0 4px 12px rgba(var(--bs-danger-rgb), 0.3);
+    animation: pulse-danger 2s ease-in-out infinite;
+}
+
+@keyframes pulse-primary {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.3),
+            0 0 0 0 rgba(var(--bs-primary-rgb), 0);
+    }
+
+    50% {
+        box-shadow: 0 4px 24px rgba(var(--bs-primary-rgb), 0.6),
+            0 0 8px 8px rgba(var(--bs-primary-rgb), 0.4);
+    }
+}
+
+@keyframes pulse-danger {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 12px rgba(var(--bs-danger-rgb), 0.3);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 4px 24px rgba(var(--bs-danger-rgb), 0.6);
+        transform: scale(1.01);
+    }
+}
+
+/* ===================================
+   Navigation
+   =================================== */
+.nav-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: var(--navbar-height);
+    z-index: 4;
+}
+
+.nav-foreground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: var(--navbar-height);
+    z-index: 6;
+}
+
+@media (min-width: 992px) {
+    .bg-lg-transparent {
+        background-color: transparent !important;
+    }
+
+    .bg-lg-dark {
+        background-color: var(--bs-dark) !important;
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    background-color: var(--bs-primary);
+    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    mask-size: 100%;
+}
+
+.navbar-toggler {
+    border-color: var(--bs-primary);
+}
+
+.navbar-toggler:focus {
+    border-color: var(--bs-primary);
+}
+
+.navbar .nav-link.active {
+    color: var(--bs-primary) !important;
+}
+
+.navbar .dropdown-item {
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+.hero-section {
+    min-height: 60vh;
+    position: relative;
+}
+
+.hero-cta-container {
+    min-height: auto;
+}
+
+.hero-stats-container {
+    min-height: 100vh;
+}
+
+.hero-cta {
+    margin-top: -1rem;
+}
+
+/* Tablet & below adjustments */
+@media (max-width: 992px) {
+    .wave-layer svg {
+        height: 60px !important;
+    }
+
+    .hero-section {
+        min-height: 55vh;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .hero-section {
+        min-height: 50vh;
+    }
+
+    .hero-cta-container {
+        min-height: 100vh;
+    }
+
+    .hero-stats-container {
+        min-height: auto;
+    }
+}
+
+.golfer-image {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    animation: fadeInUp 1s ease-out;
+}
+
+.golfer-image img {
+    max-height: calc(65vh - var(--navbar-height));
+    min-height: 300px !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-sticky-cta].cta-visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* ===================================
+   Text shadows
+   =================================== */
+
+h1.outline-dark {
+    text-shadow:
+        -1px -1px 0 var(--bs-dark),
+        1px -1px 0 var(--bs-dark),
+        -1px 1px 0 var(--bs-dark),
+        1px 1px 0 var(--bs-dark),
+        2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link.text-white {
+    text-shadow:
+        -1px -1px 0 var(--bs-dark),
+        1px -1px 0 var(--bs-dark),
+        -1px 1px 0 var(--bs-dark),
+        1px 1px 0 var(--bs-dark),
+        1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+a:has(li):hover li {
+    color: var(--bs-link-hover-color) !important;
+    opacity: 1 !important;
+}
+
+/* ===================================
+   Product Section
+   =================================== */
+
+.product-card {
+    transition: all 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ===================================
+   Testimonial Section
+   =================================== */
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+}
+
+.hidden-text {
+    display: none;
+}
+
+.dots::after {
+    content: "... ";
+}
+
+.testimonial-card:hover .hidden-text {
+    display: inline;
+}
+
+.testimonial-card:hover .dots {
+    display: none;
+}
+
+.testimonial-card p.fst-italic::before,
+.testimonial-card p.fst-italic::after {
+    font-size: 2.25em;
+    line-height: 0;
+    vertical-align: -0.25em;
+    color: var(--success-light);
+    /* --bs-primary or --success-light */
+}
+
+.testimonial-card p.fst-italic::before {
+    content: '\201C';
+    margin-right: 0.1em;
+}
+
+.testimonial-card p.fst-italic::after {
+    content: '\201D';
+    margin-left: 0em;
+}
+
+/* ===================================
+   Integrations Section
+   =================================== */
+
+.integration-card {
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.integration-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ===================================
+   Why Choose Us Section
+   =================================== */
+
+.checkmark-light::before {
+    content: '\1F5F8';
+    margin-right: 0.1em;
+}
+
+@media (max-width: 768px) {
+    .checkmark-light::before {
+        content: '';
+    }
+}
+
+/* ===================================
+   Demo Form Section
+   =================================== */
+
+select,
+::picker(select) {
+    appearance: base-select !important;
+}
+
+/* Consistent form styling */
+.form-control,
+.form-select {
+    border: 2px solid var(--bs-secondary);
+    background-color: var(--bs-white);
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color: var(--bs-primary);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bs-primary);
+    background-color: var(--bs-white);
+    box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.15);
+}
+
+/* Hide native dropdown arrow */
+select::picker-icon {
+    display: none !important;
+}
+
+/* Dropdown menu styling */
+::picker(select) {
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    border-radius: 0.375rem !important;
+    background-color: var(--bs-white) !important;
+}
+
+/* Options styling */
+option {
+    background-color: var(--bs-white) !important;
+    padding: 0.5rem 1rem !important;
+    border: 2px !important;
+}
+
+/* Gold highlight on hover/focus */
+option:hover,
+option:focus {
+    background-color: var(--bs-primary) !important;
+    color: white !important;
+}
+
+/* Gold background for checked/selected option */
+option:checked {
+    background-color: var(--bs-primary) !important;
+    font-weight: 600 !important;
+    color: white !important;
+}
+
+.demo-form-container .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1.5rem rgba(var(--bs-primary-rgb), 0.3);
+}
+
+/* ===================================
+   Legal section
+   =================================== */

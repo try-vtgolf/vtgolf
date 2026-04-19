@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        const userLang = navigator.language.split('-')[0];
+        const supportedLangs = ['en', 'fr', 'es'];
+        const lang = supportedLangs.includes(userLang) ? userLang : 'en';
+        window.location.href = `/${lang}/`;
+    </script>
+</head>
+
+<body>
+    <p>Redirecting...</p>
+</body>
+
+</html>

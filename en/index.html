@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTGolf</title>
+    
+    
+    
+    <meta name="description" content="Golf course management software with real-time tee sheet booking, POS for pro shop and F&B, and integrated payment processing.">
+    
+
+    
+    <link rel="canonical" href="https://visualgolf.ca/en/" />
+    <link rel="alternate" hreflang="en" href="https://visualgolf.ca/en/" />
+    <link rel="alternate" hreflang="fr" href="https://visualgolf.ca/fr/" />
+    <link rel="alternate" hreflang="es" href="https://visualgolf.ca/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://visualgolf.ca/en/" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VTGolf">
+    <meta property="og:description" content="Golf course management software with real-time tee sheet booking, POS for pro shop and F&B, and integrated payment processing.">
+    <meta property="og:url" content="https://visualgolf.ca/en/">
+    <meta property="og:locale" content="en_CA">
+    <meta property="og:image" content="https://visualgolf.ca/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://visualgolf.ca/en/">
+    <meta name="twitter:title" content="VTGolf">
+    <meta name="twitter:description" content="Golf course management software with real-time tee sheet booking, POS for pro shop and F&B, and integrated payment processing.">
+    <meta name="twitter:image" content="https://visualgolf.ca/images/og-image.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#223329">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="preload" as="image" href="/images/hero/courseBG-day.webp">
+    
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;800&family=Outfit:wght@300;400;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/custom.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Custom Navbar with Layering -->
+    <div class="nav-background bg-lg-dark opacity-95"></div>
+    <div class="nav-foreground">
+        <nav class="navbar navbar-expand-xl fixed-top bg-dark opacity-95 bg-lg-transparent">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="/images/logo-ball.png" alt="" class="rolling-ball position-absolute ball-height" />
+                    <img src="/images/logo.png" alt="VT Golf" class="full-logo logo-height" />
+                </a>
+
+                <div class="d-flex d-xl-none align-items-center gap-2">
+                    <!-- Golfer sign in - always visible on mobile -->
+                    <a class="btn btn-outline-primary bg-dark btn-sm rounded-pill px-3 fw-semibold d-flex d-xl-none align-items-center gap-2 opacity-95"
+                       href="https://vtgolf.ca/user/login">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="128 64 384 544" style="height: 1.25em; width: auto;">
+                            <path fill="var(--bs-secondary)" id="tee" d="M426.5 448.1C438.6 449.3 448 459.6 448 472C448 484.4 438.6 494.6 426.5 495.9L424 496L344 496L344 584C344 597.3 333.3 608 320 608C306.7 608 296 597.3 296 584L296 496L216 496C202.7 496 192 485.3 192 472C192 459.6 201.4 449.4 213.5 448.1L216 448L424 448L426.5 448.1z" />
+                            <path fill="var(--bs-white)" id="ball" d="M320 64C426 64 512 150 512 256C512 313.4 486.8 364.8 446.9 400L193.1 400C153.2 364.8 128 313.4 128 256C128 150 214 64 320 64z" />
+                            <path fill="var(--bs-secondary)" id="dimple1" d="M352 304C344.3 304 337.8 309.5 336.3 316.8L335.7 323.2C334.4 329.5 329.5 334.4 323.2 335.7L316.8 336.3C309.5 337.8 304 344.3 304 352C304 360.8 311.2 368 320 368C346.5 368 368 346.5 368 320C368 311.2 360.8 304 352 304z" />
+                            <path fill="var(--bs-secondary)" id="dimple2" d="M416 240C408.3 240 401.8 245.5 400.3 252.8L399.7 259.2C398.4 265.5 393.5 270.4 387.2 271.7L380.8 272.3C373.5 273.8 368 280.3 368 288C368 296.8 375.2 304 384 304C410.5 304 432 282.5 432 256C432 247.2 424.8 240 416 240z" />
+                            <path fill="var(--bs-secondary)" id="dimple3" d="M336 224C328.3 224 321.8 229.5 320.3 236.8L319.7 243.2C318.4 249.5 313.5 254.4 307.2 255.7L300.8 256.3C293.5 257.8 288 264.3 288 272C288 280.8 295.2 288 304 288C330.5 288 352 266.5 352 240C352 231.2 344.8 224 336 224z" />
+                        </svg>
+                        Book tee time
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-medium mx-2" href="/en/#products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-medium mx-2" href="/en/#testimonials">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-medium mx-2" href="/en/#integrations">Partners</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-medium mx-2" href="/en/#about">Why choose us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-medium mx-2" href="/en/#demo">Request demo</a>
+                        </li>
+                        <!-- Golfer sign in - hidden on mobile, shown on desktop -->
+                        <li class="nav-item d-none d-lg-block ms-2">
+                            <a class="btn btn-outline-primary bg-dark rounded-pill px-3 py-2 fw-semibold opacity-95 d-flex align-items-center gap-2"
+                               href="https://vtgolf.ca/user/login">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="128 64 384 544" style="height: 1.25em; width: auto;">
+                                    <path fill="var(--bs-secondary)" id="tee" d="M426.5 448.1C438.6 449.3 448 459.6 448 472C448 484.4 438.6 494.6 426.5 495.9L424 496L344 496L344 584C344 597.3 333.3 608 320 608C306.7 608 296 597.3 296 584L296 496L216 496C202.7 496 192 485.3 192 472C192 459.6 201.4 449.4 213.5 448.1L216 448L424 448L426.5 448.1z" />
+                                    <path fill="var(--bs-white)" id="ball" d="M320 64C426 64 512 150 512 256C512 313.4 486.8 364.8 446.9 400L193.1 400C153.2 364.8 128 313.4 128 256C128 150 214 64 320 64z" />
+                                    <path fill="var(--bs-secondary)" id="dimple1" d="M352 304C344.3 304 337.8 309.5 336.3 316.8L335.7 323.2C334.4 329.5 329.5 334.4 323.2 335.7L316.8 336.3C309.5 337.8 304 344.3 304 352C304 360.8 311.2 368 320 368C346.5 368 368 346.5 368 320C368 311.2 360.8 304 352 304z" />
+                                    <path fill="var(--bs-secondary)" id="dimple2" d="M416 240C408.3 240 401.8 245.5 400.3 252.8L399.7 259.2C398.4 265.5 393.5 270.4 387.2 271.7L380.8 272.3C373.5 273.8 368 280.3 368 288C368 296.8 375.2 304 384 304C410.5 304 432 282.5 432 256C432 247.2 424.8 240 416 240z" />
+                                    <path fill="var(--bs-secondary)" id="dimple3" d="M336 224C328.3 224 321.8 229.5 320.3 236.8L319.7 243.2C318.4 249.5 313.5 254.4 307.2 255.7L300.8 256.3C293.5 257.8 288 264.3 288 272C288 280.8 295.2 288 304 288C330.5 288 352 266.5 352 240C352 231.2 344.8 224 336 224z" />
+                                </svg>
+                                Book tee time
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button id="langToggle" class="btn btn-link text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Change language">
+                                EN
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="langToggle">
+                                <li><a class="dropdown-item" href="/en/"><img src="/images/i18n/flag-en.svg" height="16" /> English</a></li>
+                                <li><a class="dropdown-item" href="/fr/"><img src="/images/i18n/flag-fr.svg" height="16" /> Français</a></li>
+                                <li><a class="dropdown-item" href="/es/"><img src="/images/i18n/flag-es.svg" height="16" /> Española</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main class="flex-grow-1">
+
+<div class="hero-stats-container">
+    <div class="hero-cta-container">
+        <!-- Hero Section -->
+        <section class="hero-section position-relative">
+            <!-- Background Image -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 1;">
+                <img
+                     id="hero-bg" src="/images/hero/courseBG-day.webp" alt="Golf course aerial view"
+                     fetchpriority="high" width="1200" height="630" class="w-100 h-100 d-block" style="object-fit: cover; object-position: center;">
+            </div>
+            <!-- Accent Wave -->
+            <div class="position-absolute bottom-0 start-0 w-100" style="z-index: 2;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"
+                     style="width: 100%; height: 120px; display: block;">
+                    <path d="M0,30 C200,90 400,80 600,40 C800,10 1000,20 1200,70 L1200,120 L0,120 Z"
+                          fill="var(--bs-primary)"></path>
+                </svg>
+            </div>
+            <!-- Background Wave -->
+            <div class="position-absolute bottom-0 start-0 w-100" style="z-index: 3; transform: translateY(10px);">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"
+                     style="width: 100%; height: 120px; display: block;">
+                    <path d="M0,50 C200,90 400,70 600,35 C800,0 1000,20 1200,90 L1200,120 L0,120 Z"
+                          fill="var(--bs-light)"></path>
+                </svg>
+            </div>
+            <!-- Golfer Image -->
+            <div class="golfer-image position-absolute d-none d-lg-block" style="z-index: 4;">
+                <img src="/images/hero/golferFG.webp" alt="Professional golfer" class="img-fluid">
+            </div>
+            <!-- Hero Header -->
+            <div class="container position-relative navbar-offset" style="z-index: 3;">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-xl-6 py-3">
+                        <div class="hero-content text-white">
+                            <h1 class="display-5 fw-bold my-4 outline-dark">
+                                Less time at the screen. More time on the green.
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Content -->
+        <section class="hero-cta bg-light position-relative" style="z-index: 3;">
+            <div class="container">
+                <h2 class="mb-0">Master your tee sheet from pro shop to player portal</h2>
+                <p class="lead mb-4 fs-5">
+                    Give your golfers an instant mobile-friendly way to book tee times while you manage the pro shop, food & beverage, and daily operations with intuitive touch-screen tools. Everything connects seamlessly in real time so your entire course runs smoother.
+                </p>
+                <div class="d-flex gap-3">
+                    <a href="#demo" class="btn btn-danger btn-pulse btn-lg px-4 py-3 text-nowrap d-flex align-items-center justify-content-center">
+                        Request demo
+                    </a>
+                    <a href="#products" class="btn btn-outline-dark btn-lg px-4 py-3">
+                        Explore products
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="bg-light">
+        <div class="container mt-3 py-2 border-top">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <span class="d-block display-3 fw-bold text-dark mb-2 alt-font" id="golfers-count">50,000+</span>
+                        <span class="fs-6 fw-medium text-muted">Registered golfers</span>
+                    </div>
+                </div>
+                <!--div class="col-md-4">
+                <div class="text-center p-4">
+                    <span class="d-block display-3 fw-bold text-dark mb-2 alt-font">2M+</span>
+                    <span class="fs-6 fw-medium text-muted">Tee times booked</span>
+                </div>
+            </div-->
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <span class="d-block display-3 fw-bold text-dark mb-2 alt-font">24/7</span>
+                        <span class="fs-6 fw-medium text-muted">Customer support</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <span class="d-block display-3 fw-bold text-dark mb-2 alt-font" id="years-in-business">29+</span>
+                        <span class="fs-6 fw-medium text-muted">Years developing business management software</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Products Section -->
+<section class="navbar-offset-y bg-white">
+    <div id="products" class="container-md">
+        <h2 class="display-5 text-center mb-3">Three powerful tools. One seamless experience.</h2>
+        <p class="text-center text-muted fs-5 mb-5 mx-md-5 px-md-5">VTGolf and VisualTouch POS work together as one comprehensive system: golfers get an easy mobile booking experience while your team gains powerful tools to manage the tee sheet, retail, and payments in real time.</p>
+
+        <div class="row g-4">
+            <div id="product1" class="col-md-4">
+                <div class="card bg-light-transparent h-100 border-0 shadow-sm rounded-4 p-4 product-card">
+                    <div class="text-center mb-3">
+                        <img src="/images/products/product-teesheet.webp" alt="" class="img-fluid" style="max-width: 200px;">
+                    </div>
+                    <h3 class="h4 mb-3">VTGolf TeeSheet</h3>
+                    <p class="text-muted mb-4">Real-time tee sheet management integrated with online tee time reservations.</p>
+                    <ul class="list-unstyled">
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Direct online booking via website and regional networks
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Real-time synchronization across pro shop and golfer portal
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Advanced group scheduling and friends list features
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Instant automated confirmations and easy reservation edits
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Fully mobile-optimized for golfers and staff
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div id="product2" class="col-md-4">
+                <div class="card bg-light-transparent h-100 border-0 shadow-sm rounded-4 p-4 product-card">
+                    <div class="text-center mb-3">
+                        <img src="/images/products/product-pos.webp" alt="" class="img-fluid" style="max-width: 200px;">
+                    </div>
+                    <h3 class="h4 mb-3">VisualTouch POS</h3>
+                    <p class="text-muted mb-4">Powerful touch-screen point of sale system for your pro shop, food & beverage, and daily operations.</p>
+                    <ul class="list-unstyled">
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Intuitive, fully customizable touch-screen interface
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Real-time inventory management and control
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Member accounts with quick access and charging
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Seamless integration with VTGolf TeeSheet
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Comprehensive retail and F&B sales processing
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div id="product3" class="col-md-4">
+                <div class="card bg-light-transparent h-100 border-0 shadow-sm rounded-4 p-4 product-card">
+                    <div class="text-center mb-3">
+                        <img src="/images/products/product-chargepoint.webp" alt="" class="img-fluid" style="max-width: 200px;">
+                    </div>
+                    <h3 class="h4 mb-3">ChargePoint</h3>
+                    <p class="text-muted mb-4">Flexible in-house payment processing solution for fast, secure transactions throughout your course.</p>
+                    <ul class="list-unstyled">
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Integrated payment processing for pro shop and online bookings
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Support for multiple payment types and methods
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Secure in-house payment gateway
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Real-time transaction synchronization
+                        </li>
+                        
+                        <li class="py-2 ps-4 position-relative">
+                            <span class="position-absolute start-0 text-success fw-bold">✔</span>
+                            Simplified reconciliation and reporting
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="navbar-offset-y bg-dark text-white">
+    <div id="testimonials" class="container-md">
+        <h2 class="text-center fw-bold mb-3">Trusted by golf courses across North America</h2>
+        <p class="text-center mb-5 fs-5 opacity-75">See what our customers have to say</p>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="testimonial-card rounded-4 p-4 h-100">
+                    <p class="fst-italic fs-5 mb-4 lh-lg">VT listens closely to its customers' needs and are open to developing solutions which meet our specific needs as a golf course.
+                        We can always count on VT to support us promptly and efficiently through any issues that may arise.</p>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="/images/testimonials/client-glengarry.webp" alt="Glengarry Golf and Country Club Inc." class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div>
+                            <h3 class="mb-0 fs-6 fw-semibold">Marie-Paule</h3>
+                            <p class="mb-0 small opacity-75">Owner, Glengarry Golf Course</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial-card rounded-4 p-4 h-100">
+                    <p class="fst-italic fs-5 mb-4 lh-lg"><span class="hidden-text">I have worked with VTGolf from the start. </span>It's easy to use for both customers and course operators<span class="hidden-text">.
+                            It is a very reliable system, however, if you need assistance, the staff and helpdesk are always available for quick resolution.
+                            If you add their POS as well, you have </span><span class="dots"></span>an all inclusive system that will suit most golf operations.
+                        In my opinion, the tee sheet has become one of the best in the industry.</p>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="/images/testimonials/client-mississippi.webp" alt="Mississippi Golf Club" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div>
+                            <h3 class="mb-0 fs-6 fw-semibold">Dan Kolar</h3>
+                            <p class="mb-0 small opacity-75">Head professional, Mississippi Golf Club</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial-card rounded-4 p-4 h-100">
+                    <p class="fst-italic fs-5 mb-4 lh-lg">VTGolf actually makes the Saturday foursome easy. Picked our slot, invited the guys in seconds, and skipped all the usual back-and-forth calls. It's slick, intuitive, and lets me spend more time on the range and less time playing secretary.</p>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="/images/testimonials/client-vt.webp" alt="Riverside Golf Course" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div>
+                            <h3 class="mb-0 fs-6 fw-semibold">Scott Miller</h3>
+                            <p class="mb-0 small opacity-75">VTGolf user</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Integrations Section -->
+<section class="navbar-offset-y bg-white">
+    <div id="integrations" class="container-md">
+        <h2 class="text-center fw-bold mb-3">Complete golf course ecosystem</h2>
+        <p class="text-center text-muted mb-5 fs-5">VTGolf integrates seamlessly with industry-leading partners to create one powerful, unified solution for your entire operation.</p>
+
+        <div class="row g-4">
+
+            
+            
+
+            
+            <div class="col-md-6">
+                <div class="card bg-success-transparent h-100 border-0 shadow-sm integration-card">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-dark mb-3 fs-4">Point of sale</h3>
+                        <p class="card-text text-muted mb-0">VisualTouch POS is a powerful, touch-screen system purpose-build for pro shop retail, food & beverage, and inventory management. Its real-time integration with VTGolf ensures live tee sheet updates, instant inventory adjustments, and smooth charging.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card bg-success-transparent h-100 border-0 shadow-sm integration-card">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-dark mb-3 fs-4">Payment processing</h3>
+                        <p class="card-text text-muted mb-0">Flexible payment solutions that work the way you do. Full integration with major credit/debit processors plus our own secure in-house ChargePoint system for fast, reliable transactions across online bookings, pro shop, and F&B.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card bg-success-transparent h-100 border-0 shadow-sm integration-card">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-dark mb-3 fs-4">Property management systems</h3>
+                        <p class="card-text text-muted mb-0">Seamless integration with InnQuest RoomMaster for golf resorts and courses with lodging. Automatically post golf fees, retail, and F&B charges directly to guest folios for effortless resort operations.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card bg-success-transparent h-100 border-0 shadow-sm integration-card">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-dark mb-3 fs-4">Member engagement & CRM</h3>
+                        <p class="card-text text-muted mb-0">Powerful membership tools including account charging, rewards programs, and member management modules. Keep your golfers engaged with personalized service and streamlined billing.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 offset-md-3">
+                <div class="card bg-success-transparent h-100 border-0 shadow-sm integration-card">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-dark mb-3 fs-4">Top Rack network & infrastructure</h3>
+                        <p class="card-text text-muted mb-0">Secure, professionally managed network solutions that includes 24/7 monitoring and reliable cloud connectivity so your VTGolf portal and VisualTouch POS run smoothly and securely at all times.</p>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</section>
+
+<!-- Why VTGolf Section -->
+<section class="navbar-offset-y bg-dark">
+    <div id="about" class="container-md text-white">
+        <h2 class="display-3 fw-bold mb-4 text-center">Why choose <img src="/images/logo.png" alt="VT Golf" class="logo-height" />?</h2>
+
+        <div class="container-md mx-md-5 px-md-5">
+            
+            <div class="d-flex flex-row gap-2">
+                <span class="display-5 d-none d-md-block text-success checkmark-light"></span>
+                <div class="mt-2">
+                    <h3 class="text-light">Real 24/7 golf-smart support</h3>
+                    <p class="text-success">Golf doesn't stop at 5 PM, and neither do we. Our support team is available around the clock with practical, fast-acting solutions that only people who truly understand golf operations can provide.</p>
+                </div>
+            </div>
+
+            
+            <div class="d-flex flex-row gap-2">
+                <span class="display-5 d-none d-md-block text-success checkmark-light"></span>
+                <div class="mt-2">
+                    <h3 class="text-light">Proven global expertise since 1997</h3>
+                    <p class="text-success">An international company with nearly 30 years of experience building reliable POS solutions trusted by thousands of businesses worldwide.</p>
+                </div>
+            </div>
+
+            
+            <div class="d-flex flex-row gap-2">
+                <span class="display-5 d-none d-md-block text-success checkmark-light"></span>
+                <div class="mt-2">
+                    <h3 class="text-light">One truly connected system</h3>
+                    <p class="text-success">Stop worrying about double-entry or mismatched data. Manage every location from anywhere in the world through a unified system that syncs your reservations and inventory in real time while providing powerful up-to-the-minute reports.</p>
+                </div>
+            </div>
+
+            
+            <div class="d-flex flex-row gap-2">
+                <span class="display-5 d-none d-md-block text-success checkmark-light"></span>
+                <div class="mt-2">
+                    <h3 class="text-light">Built by golfers, for golfers</h3>
+                    <p class="text-success">Our software was developed by people who actually play golf and understand the daily realities of running a course. We've worked directly with many golf operators to create a practical, intuitive solution that fits how you really work.</p>
+                </div>
+            </div>
+
+            
+        </div>
+
+    </div>
+</section>
+
+<!-- Demo Request Section -->
+<section class="navbar-offset-y bg-light">
+    <div id="demo" class="container-md">
+        <h2 class="text-center fw-bold mb-3">See VTGolf & VisualTouch POS in action</h2>
+        <p class="text-center text-muted fs-5">Schedule a personalized demo and discover how our integrated system can save your team time and improve your course operations.</p>
+
+        <div class="demo-form-container bg-dark rounded-4 shadow-lg p-4 p-md-5 shadow mx-auto" style="max-width: 700px;">
+            <form id="demoForm">
+
+                <input type="hidden" name="language" value="en">
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName" class="form-label fw-semibold text-white">First name</label>
+                        <input type="text" class="form-control rounded-3" id="firstName" name="firstName" autocomplete="given-name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName" class="form-label fw-semibold text-white">Last name</label>
+                        <input type="text" class="form-control rounded-3" id="lastName" name="lastName" autocomplete="family-name" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-semibold text-white">Email</label>
+                    <input type="email" class="form-control rounded-3" id="email" name="email" autocomplete="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label fw-semibold text-white">Phone number</label>
+                    <input type="tel" class="form-control rounded-3" id="phone" name="phone" autocomplete="tel" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="courseName" class="form-label fw-semibold text-white">Golf course name</label>
+                    <input type="text" class="form-control rounded-3" id="courseName" name="courseName" autocomplete="off" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="role" class="form-label fw-semibold text-white">Position</label>
+                    <select class="form-select rounded-3" id="role" name="role" required>
+                        <option value="">Select your role</option>
+                        
+                        <option value="Owner">Owner</option>
+                        
+                        <option value="General manager">General manager</option>
+                        
+                        <option value="Golf professional">Golf professional</option>
+                        
+                        <option value="Reseller">Reseller</option>
+                        
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label fw-semibold text-white">Additional information (optional)</label>
+                    <textarea class="form-control rounded-3" id="message" name="message" rows="4" autocomplete="off"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg btn-submit btn-pulse w-100 rounded-pill fw-bold fs-5 mt-3">Request demo</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Toast container -->
+<div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert">
+        <div class="d-flex">
+            <div class="toast-body">
+                Thank you! We'll be in touch within 24 hours to schedule your demo.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+    <div id="errorToast" class="toast align-items-center text-bg-danger border-0" role="alert">
+        <div class="d-flex">
+            <div class="toast-body">
+                Oops! Something went wrong. Please try emailing us directly at customersupport@visualgolf.ca
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+</div>
+
+<!--Sticky CTA-->
+<button data-sticky-cta class="btn btn-danger position-fixed bottom-0 end-0 m-3" style="z-index: 40; transition: opacity 0.3s ease; opacity: 0; pointer-events: none;"
+        onclick="document.getElementById('demo').scrollIntoView({ behavior: 'smooth' })">
+    Request demo
+</button>
+
+</main>
+<!-- Footer -->
+<div class="position-relative" style="z-index: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 40" preserveAspectRatio="none"
+         style="width: 100%; height: 40px; display: block;">
+        <path d="M0,0 C200,30 400,25 600,10 C800,0 1000,15 1200,35 L1200,40 L0,40 Z"
+              fill="var(--bs-dark)"></path>
+    </svg>
+</div>
+<footer class="bg-dark text-light pt-1">
+    <h2 class="visually-hidden">Contact Information</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="mb-3">
+                    <img src="/images/logo.png" alt="VTGolf" height="48">
+                </div>
+                <p class="text-light text-opacity-75">A complete golf course management solution for modern operations.</p>
+            </div>
+
+            <div class="col-md-2 mb-4">
+                <h3 class="text-white mb-3 h5 fw-bold">Products</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="/en/#product1" class="text-light text-opacity-75 text-decoration-none link-light">VTGolf TeeSheet</a></li>
+                    <li class="mb-2"><a href="/en/#product2" class="text-light text-opacity-75 text-decoration-none link-light">VisualTouch POS</a></li>
+                    <li class="mb-2"><a href="/en/#product3" class="text-light text-opacity-75 text-decoration-none link-light">ChargePoint</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 mb-4">
+                <h3 class="text-white mb-3 h5 fw-bold">Company</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="/en/about/" class="text-light text-opacity-75 text-decoration-none link-light">About us</a></li>
+                    <li class="mb-2"><a href="/en/legal/" class="text-light text-opacity-75 text-decoration-none link-light">Legal</a></li>
+                    <li class="mb-2"><a href="https://vtgolf.ca/user/login" class="text-light text-opacity-75 text-decoration-none link-light">Book tee time</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h3 class="text-white mb-3 h5 fw-bold">Contact</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="https://www.google.com/maps/search/?api=1&query=7765+Kipling+Avenue+Vaughan+ON+L4L+4G7+Canada"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="text-decoration-none link-light d-block text-light text-opacity-75">
+                            7765 Kipling Avenue<br>
+                            Vaughan, ON L4L 4G7<br>
+                            Canada
+                        </a></li>
+                    <li class="mb-2"><a href="tel:613-324-0589" class="text-light text-opacity-75 text-decoration-none link-light">613-324-0589</a></li>
+                    <li class="mb-2"><a href="mailto:customersupport@visualgolf.ca" class="text-light text-opacity-75 text-decoration-none link-light">customersupport@visualgolf.ca</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-top border-light border-opacity-10 mt-4 py-2 text-center">
+            <p class="text-light text-opacity-75 mb-0">&copy; <span id="year">2026</span> VTGolf. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+<!-- EmailJS SDK (only load on pages that need it) -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Calculate years in business (since 1997)
+    //const yearsSinceFounded = new Date().getFullYear() - 1997;
+    //document.getElementById('years-in-business').textContent = yearsSinceFounded + '+';
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+
+    window.addEventListener('scroll', function () {
+        // 1. Add navbar shadow on scroll
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        }
+
+        // 2. Highlight nav links based on scroll position
+        const sections = document.querySelectorAll('section > [id]');
+        const navLinks = document.querySelectorAll('.navbar .nav-link');
+
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= sectionTop - 100) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const linkHref = link.getAttribute('href');
+            const linkHash = linkHref ? linkHref.split('#')[1] : '';
+            console.log('Checking:', linkHash, 'vs', current, '=', linkHash === current);
+            if (linkHash === current) {
+                link.classList.add('active');
+            }
+        });
+
+        console.log('Sections found:', sections.length);
+        console.log('Nav links found:', navLinks.length);
+    }, { passive: true });
+</script>
+
+
+<script>
+    // EmailJS initialization
+    emailjs.init('f6yBL4BHBD4eQYtmg');
+
+    // Demo form submission
+    document.getElementById('demoForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const submitBtn = this.querySelector('.btn-submit');
+        const originalText = submitBtn.textContent;
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        // Send email using EmailJS
+        emailjs.sendForm('service_ovtn54h', 'template_gj73j5z', this)
+            .then(function (response) {
+                const successToast = new bootstrap.Toast(document.getElementById('successToast'));
+                successToast.show();
+                document.getElementById('demoForm').reset();
+                submitBtn.disabled = true;
+                submitBtn.classList.remove('btn-pulse');
+                submitBtn.textContent = 'Demo requested';
+            }, function (error) {
+                const errorToast = new bootstrap.Toast(document.getElementById('errorToast'));
+                errorToast.show();
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            });
+    });
+</script>
+
+
+
+<script>
+    // Set hero background based on time of day
+    function setHeroBackground() {
+        const heroBackground = document.getElementById('hero-bg');
+        if (!heroBackground) return; // Exit if element not found
+
+        const hour = new Date().getHours();
+        let imagePath;
+        if (hour >= 6 && hour < 10) {
+            imagePath = '/images/hero/courseBG-sunrise.webp'; // 6am-10am
+        } else if (hour >= 10 && hour < 17) {
+            imagePath = '/images/hero/courseBG-day.webp'; // 10am-5pm (same as fallback)
+        } else if (hour >= 17 && hour < 21) {
+            imagePath = '/images/hero/courseBG-sunset.webp'; // 5pm-9pm
+        } else {
+            imagePath = '/images/hero/courseBG-night.webp'; // 9pm-6am
+        }
+
+        heroBackground.src = imagePath;
+    }
+
+    // Run on page load
+    setHeroBackground();
+</script>
+<script>
+    class StickyCTA {
+        constructor(options = {}) {
+            this.button = document.querySelector('[data-sticky-cta]');
+            this.formSection = document.getElementById(options.formId || 'demo');
+            this.productsSection = document.getElementById(options.productsId || 'products');
+
+            this.SHOW_AT = options.showAt || 600;
+            this.HIDE_AT = options.hideAt || 3000;
+
+            if (this.button && this.formSection) {
+                this.calculateThresholds();
+                this.init();
+            }
+        }
+
+        calculateThresholds() {
+            this.SHOW_AT = this.productsSection?.offsetHeight || 600;
+            this.HIDE_AT = this.formSection.offsetTop - window.innerHeight;
+        }
+
+        init() {
+            window.addEventListener('scroll', () => this.checkVisibility(), { passive: true });
+            window.addEventListener('resize', () => this.calculateThresholds());
+        }
+
+        checkVisibility() {
+            if (!this.SHOW_AT || !this.HIDE_AT) return;
+
+            const scrollY = window.scrollY;
+            const inEngagementZone = scrollY > this.SHOW_AT && scrollY < this.HIDE_AT;
+
+            if (inEngagementZone) {
+                this.button.classList.add('cta-visible');
+            } else {
+                this.button.classList.remove('cta-visible');
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        new StickyCTA({
+            formId: 'demo',
+            productsId: 'products'
+        });
+    });
+</script>
+
+
+
+<script>
+    // Get page language
+    const pageLocale = document.documentElement.lang; // 'en', 'fr', or 'es'
+    const localeMap = {
+        'en': 'en-CA',
+        'fr': 'fr-CA',
+        'es': 'es-MX'
+    };
+    const formatLocale = localeMap[pageLocale] || 'en-CA';
+
+    // Animate counting up
+    function animateCounter(element, startValue, target, suffix = '') {
+        const duration = 1000; // 1 seconds
+        const increment = (target - startValue) / (duration / 16); // 60fps
+        let current = startValue;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target.toLocaleString(formatLocale) + suffix;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current).toLocaleString(formatLocale) + suffix;
+            }
+        }, 16);
+    }
+
+    // Run on page load
+    window.addEventListener('DOMContentLoaded', async () => {
+        const golfersElement = document.getElementById('golfers-count');
+        const yearsElement = document.getElementById('years-in-business');
+
+        if (yearsElement) {
+            const yearsSinceFounded = new Date().getFullYear() - 1997;
+            animateCounter(yearsElement, 25, yearsSinceFounded, '+');
+        }
+
+        if (golfersElement) {
+            const fetchPromise = fetch('https://vtgolf.ca/user/GetAllUsersCount')
+                .then(response => response.json())
+                .then(data => {
+                    return (data.status === "OK" && data.users) ? Math.round(data.users / 1000) * 1000 : 54000;
+                })
+                .catch(error => {
+                    console.error('Error fetching member count:', error);
+                    return 54000; // Fallback
+                });
+            await animateCounter(golfersElement, 50000, 54000, '+');
+            const roundedMembers = await fetchPromise;
+            await animateCounter(golfersElement, 54000, roundedMembers, '+');
+        }
+    });
+</script>
+
+
+<script>
+    (function () {
+        const userLang = navigator.language; // e.g., 'en-US', 'fr-CA', etc.
+
+        // Only swap flag if user is en-US or fr-CA
+        if (userLang !== 'en-US' && userLang !== 'fr-CA' && userLang !== 'en-CA') return;
+
+        // Map browser languages to flag variants
+        const flagMap = {
+            'en-US': '/images/i18n/flag-en-us.svg',
+            'fr-CA': '/images/i18n/flag-fr-ca.svg'
+        };
+
+        // Get the dropdown links
+        const dropdown = document.querySelector('.nav-item.dropdown');
+        if (!dropdown) return;
+
+        const links = dropdown.querySelectorAll('.dropdown-item');
+
+        links.forEach(link => {
+            const img = link.querySelector('img');
+            if (!img) return;
+
+            const href = link.getAttribute('href');
+
+            // Swap English flag for US users
+            if (href.includes('/en/') && userLang === 'en-US') {
+                img.src = flagMap['en-US'];
+            }
+
+            // Swap French flag for Canadian users
+            if (href.includes('/fr/') && (userLang === 'fr-CA' || userLang === 'en-CA')) {
+                img.src = flagMap['fr-CA'];
+            }
+        });
+    })();
+</script>
+
+
+<script type="application/ld+json">
+[
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "VTGolf",
+        "alternateName": ["Visual Golf", "Visual Touch Golf", "VisualGolf", "VisualTouch Golf", "VT Golf", "Visual Information Products Golf"],
+        "url": "https://visualgolf.ca",
+        "logo": "https://visualgolf.ca/images/logo.png",
+        "image": "https://visualgolf.ca/images/products/product-teesheet.webp",
+        "screenshot": "https://visualgolf.ca/images/products/product-teesheet.webp",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web-based",
+        "description": "Comprehensive golf course management software featuring real-time tee sheet booking, integrated POS systems, and 24/7 support.",
+        "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "priceCurrency": "CAD",
+            "description": "Contact for custom pricing based on course requirements",
+            "seller": {
+                "@type": "Organization",
+                "name": "VTGolf",
+                "logo": "https://visualgolf.ca/images/logo.png"
+            }
+        },
+        "featureList": [
+            "Real-time tee sheet management",    
+            "Seamless integration with POS and payment processors",
+            "Online tee time reservations for golfers",
+            "Group reservation coordination",
+            "24/7 customer support"
+        ]        
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+            "@type": "Question",
+            "name": "How do I book a tee time?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Golfers can book tee times at https://www.vtgolf.ca/user/login - this takes you to the golfer portal where you can search for courses and reserve your tee time."
+            }
+            },
+            {
+            "@type": "Question",
+            "name": "Does VTGolf work with multiple golf course locations?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, VTGolf supports multi-location management with centralized reporting and real-time synchronization across all your courses."
+            }
+            },
+            {
+            "@type": "Question",
+            "name": "What's included in the VTGolf system?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "VTGolf includes tee sheet management, online booking, VisualTouch POS for pro shop and food & beverage, payment processing, and 24/7 support."
+            }
+            }
+        ]
+    }
+]
+</script>
+
+
+</body>
+
+</html>
