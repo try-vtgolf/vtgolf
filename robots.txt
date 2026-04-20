@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://visualgolf.ca/sitemap.xml
+Sitemap: https://www.visualgolf.ca/sitemap.xml
